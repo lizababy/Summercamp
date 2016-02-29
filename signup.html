@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/proj3.css">
+    <!-- css for date picker; from :http://jqueryui.com/datepicker/-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    
+    <script type="text/javascript" src="http://jadran.sdsu.edu/jquery/jquery.js"></script>
+    
+    <!-- script for date picker; from :http://jqueryui.com/datepicker/-->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/p3.js"></script>
+    
+</head>
+<body>
+    <div id="navigation">
+        <div id ="navigation-left">
+            <span class="brand"><b>Happy Days </b></span><br>Summer Camp
+
+        </div>
+        <div id ="navigation-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main_content">
+        <h1>Registration</h1>
+        <form method ="post" action="process_request.php" enctype="multipart/form-data" id="signUpForm">
+            <fieldset>
+            <legend>Child Info</legend>
+            <table id="table1">
+                    <tbody>
+                        <tr>
+                            <td class="required"><label>First Name:</label></td>
+                            <td ><input type="text" name="cfname" size="30"></td>
+                            
+                            <td class="required"><label>Last Name:</label></td>
+                            <td><input type="text" name="clname" size="30"></td>
+                            
+                            <td><label for="mname">Middle Name:</label></td>
+                            <td><input type="text" name="cmname" size="30"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="required"><label for="datepicker">Date of Birth:</label></td>
+                            <td><input type="text" name ="bday" id="datepicker" placeholder="mm/dd/yyyy" size="10"></td>
+                            <td><label>Name goes by:</label></td>
+                            <td ><input type="text" name="callname" size="30"></td>
+                        </tr>
+                        <tr>
+                            <td class="required"><label>Gender:</label></td>
+                            <td class="gender"><input type="radio" name="gender" value="M">Male &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gender" value="F">Female</td>
+                                                                                 
+                            <td class="required"><label> Upload image of child:</label></td>
+                            <td class="image"><input type = "file" name= "image" id="image"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Medical conditions:</label></td>
+                            <td colspan="3"><textarea name="mcondition" cols="68" rows="5"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>Special Dietary Requirements:</label></td>
+                            <td colspan="3"><textarea name="mdiet" cols="68" rows="5"></textarea></td>
+                        </tr>
+                        <tr class="white">
+                            <td colspan="3">Secondary Emergency Contact :-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="required"><label>Name:</label></td>
+                            <td><input type="text" name="emname" size="30"></td>
+                            
+                            <td class="required"><label>Phone number:</label></td>
+                            <td>(<input type="text" name="em_area_phone" size="3" maxlength="3" />)  &nbsp;&nbsp;
+                                <input type="text" name="em_prefix_phone" size="3" maxlength="3" /> &nbsp;-&nbsp;
+                                <input type="text" name="em_phone" size="4" maxlength="4" />
+                            </td>
+                        </tr>
+                    </tbody>
+                      
+                </table>
+        </fieldset>
+        <fieldset>
+            <legend>Programs</legend>
+            <table id="table2">
+                <tbody>
+                    <tr class="white">
+                        <td class="required" colspan="2"><label> Select at least one program:</label></td>
+                    </tr>
+                
+                    <tr class="odd program">
+                        <td><input type="checkbox" name ="cbox[]" value="1">Basketball Camp </td>
+                        <td><input type="checkbox" name ="cbox[]" value="2">Baseball Camp </td>
+                        <td><input type="checkbox" name ="cbox[]" value="3">Physical Training </td>
+                        <td><input type="checkbox" name ="cbox[]" value="4">Band Camp </td>
+                        <td><input type="checkbox" name ="cbox[]" value="5">Swimming </td>
+                        <td><input type="checkbox" name ="cbox[]" value="6">Nature Discovery </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Parent Info</legend>
+            
+            <table id="table3">
+                <tbody>
+                    <tr class="white">
+                        <td colspan="3">Parent or primary guardian :-</td>
+                    </tr>
+                    <tr>
+                        <td class="required"> <label>First Name:</label></td>
+                        <td><input type="text" name="pfname" size="30"></td>
+                        <td class="required"><label>Last Name:</label></td>
+                        <td colspan="2"><input type="text" name="plname" size="30"></td>
+                        <td><label>Middle Name:</label></td>
+                        <td><input type="text" name="pmname" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td class="required"><label>Relationship to child:</label></td>
+                        <td><select name="relationship">
+                                <option selected value="error">---select relationship---</option>
+                                <option value="Father"> Father</option>
+                                <option value="Mother"> Mother</option>
+                                <option value="Guardian"> Guardian</option>
+                            </select></td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="required"><label>Address:</label></td>
+                        <td colspan="3"><input type="text" name="address" size="30">
+                        <input type="text" name="address2" size="15"></td>
+                    </tr>
+                    <tr>
+                        <td class="required"><label>City:</label></td>
+                        <td><input type="text" name="city" size="30"></td>
+                        
+                        <td class="required"><label>State:</label></td>
+                        <td><input type="text" name="state" placeholder="XX" size="2"></td>
+                        
+                        <td class="required"><label>Zip code:</label></td>
+                        <td><input type="text" name="zipcode" size="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="required"><label>Home phone:</label></td>
+                        <td>(<input type="text" name="h_area_phone"  size="3" maxlength="3" />)&nbsp;
+                                <input type="text" name="h_prefix_phone" size="3" maxlength="3" />-&nbsp;
+                                <input type="text" name="h_phone" size="4" maxlength="4" />
+                        </td>
+                        
+                        <td><label>Cell phone:</label></td>
+                        <td colspan="2">(<input type="text" name="c_area_phone"  size="3" maxlength="3" />)&nbsp;
+                                <input type="text" name="c_prefix_phone" size="3" maxlength="3" />-&nbsp;
+                                <input type="text" name="c_phone" size="4" maxlength="4" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="required"><label>Email address:</label></td>
+                        <td><input type="text" name="email" size="30"></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </fieldset>
+                
+        <div id="message_line">&nbsp;</div>
+        <div id="button_panel">  
+             <p id="errorMessage"></p>    
+                <input type="reset" value="Reset" class="button" />
+                <input type="button" value="Submit"  id = "send_data" class="button" /> 
+                <h2 id="status"></h2>
+                   <img id="busy_wait" src="loading.gif" />
+        </div> 
+    </form>
+            
+    </div>
+    <hr>
+</body>
+</html>
